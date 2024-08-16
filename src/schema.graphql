@@ -1,0 +1,52 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  name: String!
+  email: String!
+  password: String!
+}
+
+type TokenType {
+  token: String!
+}
+
+type Message {
+  _id: ID!
+  message: String!
+  receiver: String!
+}
+
+type Query {
+  hello: String!
+  messages: [Message!]!
+  userMessages(id: String!): [Message!]!
+}
+
+type Mutation {
+  signup(createUserInput: CreateUserInput!): User!
+  login(loginUserInput: loginUserInput!): TokenType!
+  createMessage(createMessageInput: CreateMessageInput!): Message!
+  deleteMessage(deleteMessageInput: deleteMessageInput!): Message!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+}
+
+input loginUserInput {
+  email: String!
+  password: String!
+}
+
+input CreateMessageInput {
+  message: String!
+  receiver: String!
+}
+
+input deleteMessageInput {
+  messageId: String!
+}
